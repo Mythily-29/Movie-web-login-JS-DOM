@@ -11,6 +11,12 @@ register.addEventListener('click',(e)=>{
     inputValidation(username,email,peronalname)
 })
 
+window.onload=()=>{
+    if(JSON.parse(localStorage.getItem('displayName'))!=""){
+        window.location.href='dashboard.html'
+    }
+}
+
 function inputValidation(user,mail,n){
 let emailCheck= /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(com|in)$/.test(mail.value)
     if(user.value.trim()==""){alertMsg('error','Input is empty')}
